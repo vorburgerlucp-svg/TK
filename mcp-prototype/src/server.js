@@ -89,7 +89,7 @@ export function createServer(token) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const port = Number(process.env.TK_MCP_PORT ?? 8787);
+  const port = Number(process.env.TK_MCP_PORT ?? 8790);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('TK_MCP_PORT ist ungültig.');
   const server = createServer(process.env.TK_MCP_TOKEN);
   server.listen(port, loopback, () => console.log('TK MCP lokal unter http://' + loopback + ':' + port + '/mcp'));
